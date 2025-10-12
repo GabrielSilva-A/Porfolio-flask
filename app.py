@@ -11,11 +11,11 @@ app.config['FREEZER_DESTINATION'] = 'docs'
 
 # Datos del portfolio - ¡PERSONALIZA ESTOS DATOS!
 portfolio_data = {
-    'name': 'Tu Nombre',
+    'name': 'Gabriel Silva',
     'title': 'Desarrollador Full Stack',
-    'email': 'tu.email@ejemplo.com',
-    'phone': '+1234567890',
-    'location': 'Tu Ciudad, País',
+    'email': 'ags0014@ejemplo.com',
+    'phone': '2475414146',
+    'location': 'Rojas, Argentina',
     'about': 'Soy un apasionado desarrollador con experiencia en tecnologías web modernas. Me encanta crear soluciones innovadoras y aprender nuevas tecnologías.',
     'skills': [
         {'name': 'Python', 'level': 90},
