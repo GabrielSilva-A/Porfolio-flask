@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<!-- Hero Section -->
+<section class="hero-section bg-primary text-white py-5">
+    <div class="container py-5">
+        <div class="row align-items-center">
+            <div class="col-lg-6">
+                <!-- CORREGIDO: display-4 y fw-bold -->
+                <h1 class="display-4 fw-bold">{{ data.name }}</h1>
+                
+                <!-- CORREGIDO: h3 en lugar de ip -->
+                <h2 class="h3 mb-4">{{ data.title }}</h2>
+                
+                <!-- CORREGIDO: about[:150] -->
+                <p class="lead mb-4">{{ data.about[:150] }}...</p>
+                
+                <!-- CORREGIDO: hero-buttons -->
+                <div class="hero-buttons">
+                    <a href="{{ url_for('projects') }}" class="btn btn-light btn-lg me-3">
+                        Ver Proyectos
+                    </a>
+                    <a href="{{ url_for('contact') }}" class="btn btn-outline-light btn-lg">
+                        Contactar
+                    </a>
+                </div>
+            </div>
+            <div class="col-lg-6 text-center">
+                <img src="{{ url_for('static', filename='images/profile.jpg') }}" 
+                     alt="{{ data.name }}" 
+                     class="img-fluid rounded-circle profile-image">
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Resto del código... -->
+{% endblock %}
