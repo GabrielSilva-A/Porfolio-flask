@@ -59,9 +59,21 @@
         <div class="container text-center">
             <p>&copy; 2024 {{ data.name }}. Todos los derechos reservados.</p>
             <div class="social-links">
-                <a href="#" class="text-light mx-2"><i class="fab fa-github"></i></a>
-                <a href="#" class="text-light mx-2"><i class="fab fa-linkedin"></i></a>
-                <a href="#" class="text-light mx-2"><i class="fab fa-twitter"></i></a>
+                {% if data.social_links.github %}
+                <a href="{{ data.social_links.github }}" class="text-light mx-2" target="_blank">
+                    <i class="fab fa-github"></i>
+                </a>
+                {% endif %}
+                {% if data.social_links.linkedin %}
+                <a href="{{ data.social_links.linkedin }}" class="text-light mx-2" target="_blank">
+                    <i class="fab fa-linkedin"></i>
+                </a>
+                {% endif %}
+                {% if data.social_links.twitter %}
+                <a href="{{ data.social_links.twitter }}" class="text-light mx-2" target="_blank">
+                    <i class="fab fa-twitter"></i>
+                </a>
+                {% endif %}
             </div>
         </div>
     </footer>

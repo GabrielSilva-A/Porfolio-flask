@@ -3,36 +3,101 @@
 {% block content %}
 <!-- Hero Section -->
 <section class="hero-section bg-primary text-white py-5">
-    <div class="container py-5">
+    <div class="container py-5 mt-4">
         <div class="row align-items-center">
             <div class="col-lg-6">
-                <!-- CORREGIDO: display-4 y fw-bold -->
-                <h1 class="display-4 fw-bold">{{ data.name }}</h1>
-                
-                <!-- CORREGIDO: h3 en lugar de ip -->
-                <h2 class="h3 mb-4">{{ data.title }}</h2>
-                
-                <!-- CORREGIDO: about[:150] -->
-                <p class="lead mb-4">{{ data.about[:150] }}...</p>
-                
-                <!-- CORREGIDO: hero-buttons -->
+                <h1 class="display-4 fw-bold">{{ data.name | default('Tu Nombre') }}</h1>
+                <h2 class="h3 mb-4">{{ data.title | default('Tu Título') }}</h2>
+                <p class="lead mb-4">{{ data.about | default('Sobre mí...') }}</p>
                 <div class="hero-buttons">
                     <a href="{{ url_for('projects') }}" class="btn btn-light btn-lg me-3">
-                        Ver Proyectos
+                        <i class="fas fa-briefcase me-2"></i>Ver Proyectos
                     </a>
                     <a href="{{ url_for('contact') }}" class="btn btn-outline-light btn-lg">
-                        Contactar
+                        <i class="fas fa-envelope me-2"></i>Contactar
                     </a>
                 </div>
             </div>
             <div class="col-lg-6 text-center">
                 <img src="{{ url_for('static', filename='images/profile.jpg') }}" 
-                     alt="{{ data.name }}" 
-                     class="img-fluid rounded-circle profile-image">
+                     alt="Foto de perfil de {{ data.name | default('Tu Nombre') }}" 
+                     class="img-fluid rounded-circle profile-image shadow">
             </div>
         </div>
     </div>
 </section>
 
-<!-- Resto del código... -->
+<!-- Skills Section -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Habilidades Técnicas</h2>
+        <div class="row">
+            {% for skill in data.skills %}
+            <div class="col-md-6 mb-4">
+                <div class="skill-item">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="fw-bold">{{ skill.name }}</span>
+                        <span>{{ skill.level }}%</span>
+                    </div>
+                    <div class="progress" style="height: 10px;">
+                        <div class="progress-bar" role="progressbar" 
+                             style="width: {{ skill.level }}%"
+                             aria-valuenow="{{ skill.level }}" 
+                             aria-valuemin="0" 
+                             aria-valuemax="100">
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Featured Projects -->
+<section class="bg-light py-5">
+    <div class="container">
+        <h2 class="text-center mb-5">Proyectos Destacados</h2>
+        <div class="row">
+            {% for project in data.projects[:3] %}
+            <div class="col-lg-4 col-md-6 mb-4">
+                <div class="card h-100 shadow-sm">
+                    <div class="card-img-top bg-dark text-light d-flex align-items-center justify-content-center" 
+                         style="height: 200px; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
+                        <i class="fas fa-project-diagram fa-3x"></i>
+                    </div>
+                    <div class="card-body d-flex flex-column">
+                        <h5 class="card-title">{{ project.title }}</h5>
+                        <p class="card-text flex-grow-1">{{ project.description }}</p>
+                        <div class="mb-3">
+                            {% for tech in project.technologies %}
+                            <span class="badge bg-primary me-1 mb-1">{{ tech }}</span>
+                            {% endfor %}
+                        </div>
+                        <div class="card-footer mt-auto bg-transparent border-0 px-0">
+                            <div class="d-grid gap-2 d-md-flex">
+                                {% if project.github_url %}
+                                <a href="{{ project.github_url }}" class="btn btn-outline-dark btn-sm" target="_blank" rel="noopener">
+                                    <i class="fab fa-github"></i> Código
+                                </a>
+                                {% endif %}
+                                {% if project.demo_url and project.demo_url != '#' %}
+                                <a href="{{ project.demo_url }}" class="btn btn-primary btn-sm" target="_blank" rel="noopener">
+                                    <i class="fas fa-external-link-alt"></i> Demo
+                                </a>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+        <div class="text-center mt-4">
+            <a href="{{ url_for('projects') }}" class="btn btn-primary btn-lg">
+                Ver Todos los Proyectos
+            </a>
+        </div>
+    </div>
+</section>
 {% endblock %}
