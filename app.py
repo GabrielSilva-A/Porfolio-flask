@@ -8,9 +8,9 @@ app.config['SECRET_KEY'] = 'clave-secreta-temporal'
 portfolio_data = {
     'name': 'Gabriel Silva',
     'title': 'Desarrollador Full Stack',
-    'email': 'tu.email@ejemplo.com',
-    'phone': '+1234567890',
-    'location': 'Tu Ciudad, País',
+    'email': 'ags0014@ejemplo.com',
+    'phone': '2475414146',
+    'location': 'Rojas, Argentina',
     'about': 'Soy un apasionado desarrollador con experiencia en tecnologías web modernas.',
     'skills': [
         {'name': 'Python', 'level': 90},
