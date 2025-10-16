@@ -1,5 +1,5 @@
 :root {
-    --primary-color: #007bff;
+    --primary-color: #00ff22;
     --secondary-color: #6c757d;
     --dark-color: #343a40;
     --light-color: #f8f9fa;
@@ -12,7 +12,8 @@ body {
 }
 
 .hero-section {
-    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    background: linear-gradient(135deg, #007bff 0%, #0056b3 100%);
+    margin-top: 76px;
 }
 
 .profile-image {
@@ -90,6 +91,8 @@ body {
 }
 
 .btn-primary:hover {
+    background-color: #0056b3;
+    border-color: #0056b3;
     transform: translateY(-2px);
     box-shadow: 0 5px 15px rgba(0,123,255,0.3);
 }
