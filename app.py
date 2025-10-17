@@ -52,27 +52,27 @@ portfolio_data = {
     ],
     'experience': [
         {
-            'position': 'Desarrollador Full Stack',
-            'company': 'Tech Solutions Inc.',
-            'period': '2022 - Presente',
-            'description': 'Desarrollo de aplicaciones web con Python y JavaScript'
+            'position': 'Estudiante Autónomo',
+            'company': 'FreeCodeCamp',
+            'period': '2023 - 2024',
+            'description': 'Certificacion en HTML y CSS'
         },
         {
-            'position': 'Practicante de Desarrollo',
-            'company': 'StartUp Innovadora',
-            'period': '2021 - 2022',
-            'description': 'Desarrollo de features frontend y backend'
+            'position': 'Estudiante de la provincia de Bs.As',
+            'company': 'Codo a Codo 4.0',
+            'period': '02/2024 - 08/2024',
+            'description': 'Python'
         }
     ],
     'education': [
         {
-            'degree': 'Ingeniería en Sistemas',
-            'institution': 'Universidad Ejemplo',
-            'period': '2018 - 2022'
+            'degree': 'Tecnico en Programación',
+            'institution': 'Techlabs',
+            'period': '2025 - 2026'
         }
     ],
     'social_links': {
-        'github': 'https://github.com/tuusuario',
+        'github': 'https://github.com/GabrielSilva-A',
         'linkedin': 'https://linkedin.com/in/tuusuario',
         'twitter': 'https://twitter.com/tuusuario'
     }
@@ -90,27 +90,27 @@ def about():
 def projects():
     return render_template('projects.html', data=portfolio_data)
 
-@app.route('/contact/')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    return render_template('contact.html', data=portfolio_data)
-
-# Esta ruta solo funciona en desarrollo
-@app.route('/contact', methods=['POST'])
-def contact_post():
     if request.method == 'POST':
+        # Procesar formulario
         name = request.form['name']
         email = request.form['email']
         subject = request.form['subject']
         message = request.form['message']
         
-        print(f"📧 Mensaje de contacto:")
-        print(f"De: {name} ({email})")
-        print(f"Asunto: {subject}")
-        print(f"Mensaje: {message}")
+        print(f"📧 Nuevo mensaje de contacto:")
+        print(f"   De: {name} ({email})")
+        print(f"   Asunto: {subject}")
+        print(f"   Mensaje: {message}")
         
-        flash('¡Mensaje enviado! (Solo en desarrollo)', 'success')
+        flash('¡Mensaje recibido! Te contactaré pronto.', 'success')
+        return redirect(url_for('contact'))
     
-    return redirect('/contact/')
+    # Mostrar formulario (GET request)
+    return render_template('contact.html', data=portfolio_data)
+
+
 
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == "freeze":
