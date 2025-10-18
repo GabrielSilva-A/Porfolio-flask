@@ -18,11 +18,14 @@ portfolio_data = {
     'location': 'Rojas, Argentina',
     'about': 'Soy un apasionado desarrollador con experiencia en tecnologías web modernas. Me encanta crear soluciones innovadoras y aprender nuevas tecnologías.',
     'skills': [
-        {'name': 'Python', 'level': 90},
-        {'name': 'Flask', 'level': 85},
-        {'name': 'JavaScript', 'level': 80},
-        {'name': 'HTML/CSS', 'level': 95},
-        {'name': 'SQL', 'level': 75},
+        {'name': 'Python', 'level': 'Avanzado', 'category': 'Backend', 'icon': 'fab fa-python'},
+        {'name': 'Flask', 'level': 'Avanzado', 'category': 'Backend', 'icon': 'fas fa-flask'},
+        {'name': 'JavaScript', 'level': 'Intermedio', 'category': 'Frontend', 'icon': 'fab fa-js-square'},
+        {'name': 'HTML/CSS', 'level': 'Avanzado', 'category': 'Frontend', 'icon': 'fab fa-html5'},
+        {'name': 'Git', 'level': 'Intermedio', 'category': 'Herramientas', 'icon': 'fab fa-git-alt'},
+        {'name': 'SQL', 'level': 'Intermedio', 'category': 'Base de Datos', 'icon': 'fas fa-database'},
+        {'name': 'Bootstrap', 'level': 'Avanzado', 'category': 'Frontend', 'icon': 'fab fa-bootstrap'},
+        {'name': 'React', 'level': 'Básico', 'category': 'Frontend', 'icon': 'fab fa-react'},
     ],
     'projects': [
         {
@@ -90,27 +93,25 @@ def about():
 def projects():
     return render_template('projects.html', data=portfolio_data)
 
-@app.route('/contact/')
+@app.route('/contact', methods=['GET', 'POST'])
 def contact():
-    return render_template('contact.html', data=portfolio_data)
-
-# Esta ruta solo funciona en desarrollo
-@app.route('/contact', methods=['POST'])
-def contact_post():
     if request.method == 'POST':
+        # Procesar formulario
         name = request.form['name']
         email = request.form['email']
         subject = request.form['subject']
         message = request.form['message']
         
-        print(f"📧 Mensaje de contacto:")
-        print(f"De: {name} ({email})")
-        print(f"Asunto: {subject}")
-        print(f"Mensaje: {message}")
+        print(f"📧 Nuevo mensaje de contacto:")
+        print(f"   De: {name} ({email})")
+        print(f"   Asunto: {subject}")
+        print(f"   Mensaje: {message}")
         
-        flash('¡Mensaje enviado! (Solo en desarrollo)', 'success')
+        flash('¡Mensaje recibido! Te contactaré pronto.', 'success')
+        return redirect(url_for('contact'))
     
-    return redirect('/contact/')
+    # Mostrar formulario (GET request)
+    return render_template('contact.html', data=portfolio_data)
 
 if __name__ == '__main__':
     if len(sys.argv) > 1 and sys.argv[1] == "freeze":
