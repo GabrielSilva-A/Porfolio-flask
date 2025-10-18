@@ -12,11 +12,11 @@ app.config['FREEZER_DESTINATION'] = 'docs'
 # Datos del portfolio - ¡PERSONALIZA ESTOS DATOS!
 portfolio_data = {
     'name': 'Gabriel Silva',
-    'title': 'Desarrollador Full Stack',
+    'title': 'Desarrollador Full Stack (Junior)',
     'email': 'ags0014@ejemplo.com',
     'phone': '2475414146',
     'location': 'Rojas, Argentina',
-    'about': 'Soy un apasionado desarrollador con experiencia en tecnologías web modernas. Me encanta crear soluciones innovadoras y aprender nuevas tecnologías.',
+    'about': 'Soy estudiante en Programacion, creo que mi mayor fortaleza es mi capacidad de aprendizaje y la adaptabilidad. Me tomo con entusiasmo cada nuevo desafio porque creo que es la oportunidad perfecta para aprender algo nuevo.',
     'skills': [
         {'name': 'Python', 'level': 'Avanzado', 'category': 'Backend', 'icon': 'fab fa-python'},
         {'name': 'Flask', 'level': 'Avanzado', 'category': 'Backend', 'icon': 'fas fa-flask'},
@@ -25,7 +25,8 @@ portfolio_data = {
         {'name': 'Git', 'level': 'Intermedio', 'category': 'Herramientas', 'icon': 'fab fa-git-alt'},
         {'name': 'SQL', 'level': 'Intermedio', 'category': 'Base de Datos', 'icon': 'fas fa-database'},
         {'name': 'Bootstrap', 'level': 'Avanzado', 'category': 'Frontend', 'icon': 'fab fa-bootstrap'},
-        {'name': 'React', 'level': 'Básico', 'category': 'Frontend', 'icon': 'fab fa-react'},
+        {'name': 'Node', 'level': 'Básico', 'category': 'Frontend', 'icon': 'fab fa-node' },
+        {'name': 'Express', 'level': 'Básico', 'category': 'Backend', 'icon': 'fab fa-express' }
     ],
     'projects': [
         {
@@ -37,8 +38,8 @@ portfolio_data = {
             'image': 'project1.jpg'
         },
         {
-            'title': 'Sistema de Gestión',
-            'description': 'Sistema para gestión de tareas y proyectos',
+            'title': 'Sistema de Gestión de Tareas',
+            'description': 'Sistema para gestión de tareas y proyectos para la empresa Cargill',
             'technologies': ['Python', 'Django', 'PostgreSQL', 'React'],
             'github_url': 'https://github.com/tuusuario/sistema-gestion',
             'demo_url': '#',
@@ -46,11 +47,19 @@ portfolio_data = {
         },
         {
             'title': 'API REST',
-            'description': 'API REST desarrollada con Flask',
+            'description': 'API REST desarrollada con Node.js y Express',
             'technologies': ['Python', 'Flask', 'JWT', 'MongoDB'],
             'github_url': 'https://github.com/tuusuario/api-rest',
             'demo_url': '#',
             'image': 'project3.jpg'
+        },
+        {
+            'title': 'Login y Register',
+            'description': 'Interfaz de usuario para login y registro creada con React',
+            'technologies': ['Node', 'Express', 'PostgreSQL', 'JavaScript'],
+            'github_url': 'https://github.com/tuusuario/api-rest',
+            'demo_url': '#',
+            'image': 'project4.jpg'
         }
     ],
     'experience': [
@@ -69,15 +78,19 @@ portfolio_data = {
     ],
     'education': [
         {
-            'degree': 'Ingeniería en Sistemas',
-            'institution': 'Universidad Ejemplo',
-            'period': '2018 - 2022'
+            'degree': 'Técnico en Programción',
+            'institution': 'Instituto Tecnologico Argentino, Teclab',
+            'period': '2025 - 2026'
+        },
+        {
+            'degree': 'Python Inicial',
+            'institution': 'Codo a Codo 4.0',
+            'period': '2024 - 2025'
         }
     ],
     'social_links': {
-        'github': 'https://github.com/tuusuario',
-        'linkedin': 'https://linkedin.com/in/tuusuario',
-        'twitter': 'https://twitter.com/tuusuario'
+        'github': 'https://github.com/GabrielSilva-A',
+        'linkedin': 'https://www.linkedin.com/in/gabriel-silva-75341a219/',
     }
 }
 
