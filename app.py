@@ -25,8 +25,8 @@ portfolio_data = {
         {'name': 'Git', 'level': 'Intermedio', 'category': 'Herramientas', 'icon': 'fab fa-git-alt'},
         {'name': 'SQL', 'level': 'Intermedio', 'category': 'Base de Datos', 'icon': 'fas fa-database'},
         {'name': 'Bootstrap', 'level': 'Avanzado', 'category': 'Frontend', 'icon': 'fab fa-bootstrap'},
-        {'name': 'Node', 'level': 'Básico', 'category': 'Frontend', 'icon': 'fab fa-node' },
-        {'name': 'Express', 'level': 'Básico', 'category': 'Backend', 'icon': 'fab fa-express' }
+        {'name': 'Node.js', 'level': 'Básico', 'category': 'Backend', 'icon': 'fab fa-node-js'},
+        {'name': 'Express', 'level': 'Básico', 'category': 'Backend', 'icon': 'fas fa-server'}
     ],
     'projects': [
         {
@@ -47,7 +47,7 @@ portfolio_data = {
         },
         {
             'title': 'API REST',
-            'description': 'API REST desarrollada con Node.js y Express',
+            'description': 'API REST desarrollada con Flask',
             'technologies': ['Python', 'Flask', 'JWT', 'MongoDB'],
             'github_url': 'https://github.com/tuusuario/api-rest',
             'demo_url': '#',
@@ -56,8 +56,8 @@ portfolio_data = {
         {
             'title': 'Login y Register',
             'description': 'Interfaz de usuario para login y registro creada con React',
-            'technologies': ['Node', 'Express', 'PostgreSQL', 'JavaScript'],
-            'github_url': 'https://github.com/tuusuario/api-rest',
+            'technologies': ['React', 'Node.js', 'Express', 'MongoDB'],
+            'github_url': 'https://github.com/tuusuario/login-register',
             'demo_url': '#',
             'image': 'project4.jpg'
         }
@@ -77,8 +77,6 @@ portfolio_data = {
         }
     ],
     'education': [
-        
-
         {
             'degree': 'Python Inicial',
             'institution': 'Codo a Codo 4.0',
@@ -88,7 +86,6 @@ portfolio_data = {
             'degree': 'Tecnico en Programación',
             'institution': 'Techlabs',
             'period': '2025 - 2026'
-
         }
     ],
     'social_links': {
@@ -109,14 +106,19 @@ def about():
 def projects():
     return render_template('projects.html', data=portfolio_data)
 
-@app.route('/contact', methods=['GET', 'POST'])
+@app.route('/contact/', methods=['GET', 'POST'])
 def contact():
     if request.method == 'POST':
-        # Procesar formulario
-        name = request.form['name']
-        email = request.form['email']
-        subject = request.form['subject']
-        message = request.form['message']
+        # Procesar formulario con validación básica
+        name = request.form.get('name', '').strip()
+        email = request.form.get('email', '').strip()
+        subject = request.form.get('subject', '').strip()
+        message = request.form.get('message', '').strip()
+        
+        # Validación de campos obligatorios
+        if not name or not email or not message:
+            flash('Por favor, completa todos los campos obligatorios.', 'error')
+            return render_template('contact.html', data=portfolio_data)
         
         print(f"📧 Nuevo mensaje de contacto:")
         print(f"   De: {name} ({email})")
