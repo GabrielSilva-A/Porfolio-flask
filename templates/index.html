@@ -11,10 +11,10 @@
                 <p class="lead mb-4 text-light opacity-80">{{ data.about | default('Sobre mí...') }}</p>
                 <div class="hero-buttons">
                     <a href="{{ url_for('projects') }}" class="btn btn-light btn-modern me-3">
-                        <i class="fas fa-briefcase me-2"></i>Ver Proyectos
+                        <i class="fas fa-briefcase me-2"></i>Ver Proyectos!
                     </a>
                     <a href="{{ url_for('contact') }}" class="btn btn-outline-light btn-modern">
-                        <i class="fas fa-envelope me-2"></i>Contactar
+                        <i class="fas fa-envelope me-2"></i>Contacto
                     </a>
                 </div>
             </div>
@@ -61,6 +61,13 @@
                         </div>
                         {% endif %}
                     {% endfor %}
+
+            <div class="col-md-6 mb-4">
+                <div class="skill-item">
+                    <div class="d-flex justify-content-between mb-2">
+                        <span class="fw-bold">{{ skill.name }}</span>
+                        <span>{{ skill.level }}%</span>
+                    </div>                    
                 </div>
             </div>
             {% endfor %}
