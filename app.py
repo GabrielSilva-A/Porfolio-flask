@@ -18,13 +18,13 @@ portfolio_data = {
     'location': 'Rojas, Argentina',
     'about': 'Soy estudiante en Programacion, creo que mi mayor fortaleza es mi capacidad de aprendizaje y la adaptabilidad. Me tomo con entusiasmo cada nuevo desafio porque creo que es la oportunidad perfecta para aprender algo nuevo.',
     'skills': [
-        {'name': 'Python', 'level': 'Avanzado', 'category': 'Backend', 'icon': 'fab fa-python'},
-        {'name': 'Flask', 'level': 'Avanzado', 'category': 'Backend', 'icon': 'fas fa-flask'},
+        {'name': 'Python', 'level': 'Intermedio', 'category': 'Backend', 'icon': 'fab fa-python'},
+        {'name': 'Flask', 'level': 'Intermedio', 'category': 'Backend', 'icon': 'fas fa-flask'},
         {'name': 'JavaScript', 'level': 'Intermedio', 'category': 'Frontend', 'icon': 'fab fa-js-square'},
         {'name': 'HTML/CSS', 'level': 'Avanzado', 'category': 'Frontend', 'icon': 'fab fa-html5'},
         {'name': 'Git', 'level': 'Intermedio', 'category': 'Herramientas', 'icon': 'fab fa-git-alt'},
         {'name': 'SQL', 'level': 'Intermedio', 'category': 'Base de Datos', 'icon': 'fas fa-database'},
-        {'name': 'Bootstrap', 'level': 'Avanzado', 'category': 'Frontend', 'icon': 'fab fa-bootstrap'},
+        {'name': 'Bootstrap', 'level': 'Básico', 'category': 'Frontend', 'icon': 'fab fa-bootstrap'},
         {'name': 'Node.js', 'level': 'Básico', 'category': 'Backend', 'icon': 'fab fa-node-js'},
         {'name': 'Express', 'level': 'Básico', 'category': 'Backend', 'icon': 'fas fa-server'}
     ],
