@@ -1,28 +1,31 @@
+[file name]: about.html
+[file content begin]
 {% extends "base.html" %}
 
 {% block content %}
 <div class="container py-5 mt-4">
     <div class="row">
-        <div class="col-lg-8 mx-auto">
-            <h1 class="text-center mb-5">Sobre Mí</h1>
+        <div class="col-lg-10 mx-auto">
+            <h1 class="text-center mb-5 page-title">Mi Curva de Aprendizaje</h1>
             
+            <!-- Información Personal -->
             <div class="row mb-5">
                 <div class="col-md-4 text-center mb-4">
-                    <div class="about-item p-4 rounded shadow-sm">
+                    <div class="about-item p-4 rounded shadow-sm modern-card">
                         <i class="fas fa-user fa-2x text-primary mb-3"></i>
                         <h5>Nombre</h5>
                         <p>{{ data.name }}</p>
                     </div>
                 </div>
                 <div class="col-md-4 text-center mb-4">
-                    <div class="about-item p-4 rounded shadow-sm">
+                    <div class="about-item p-4 rounded shadow-sm modern-card">
                         <i class="fas fa-briefcase fa-2x text-primary mb-3"></i>
                         <h5>Profesión</h5>
                         <p>{{ data.title }}</p>
                     </div>
                 </div>
                 <div class="col-md-4 text-center mb-4">
-                    <div class="about-item p-4 rounded shadow-sm">
+                    <div class="about-item p-4 rounded shadow-sm modern-card">
                         <i class="fas fa-map-marker-alt fa-2x text-primary mb-3"></i>
                         <h5>Ubicación</h5>
                         <p>{{ data.location }}</p>
@@ -30,20 +33,137 @@
                 </div>
             </div>
 
-            <!-- About Text -->
-            <div class="card shadow-sm mb-5">
+            <!-- Mi Historia -->
+            <div class="card shadow-sm mb-5 modern-card">
                 <div class="card-body">
-                    <h3 class="card-title mb-4">Mi Historia</h3>
+                    <h3 class="card-title mb-4">Mi Historia en la Programación</h3>
                     <p class="card-text">{{ data.about }}</p>
                 </div>
             </div>
 
-            <!-- Experience -->
-            <h3 class="mb-4">Experiencia Laboral</h3>
+            <!-- Línea de Tiempo de Aprendizaje -->
+            <h2 class="text-center mb-4">Mi Viaje en la Programación</h2>
+            <div class="learning-timeline">
+                <!-- Marcadores de Año -->
+                <div class="timeline-year timeline-year-2023">2023</div>
+                <div class="timeline-year timeline-year-2024">2024</div>
+                <div class="timeline-year timeline-year-2025">2025</div>
+
+                <!-- FreeCodeCamp - 2023 -->
+                <div class="timeline-item">
+                    <div class="timeline-content" onclick="toggleProjects('fcc-projects')">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fas fa-laptop-code"></i>
+                            </div>
+                            <div class="course-info">
+                                <h4>FreeCodeCamp - Certificación Web</h4>
+                                <p class="course-period">Marzo 2023 - Diciembre 2023</p>
+                            </div>
+                        </div>
+                        <p>Certificación completa en desarrollo web con HTML, CSS y JavaScript. Aprendí los fundamentos del desarrollo frontend y creé mis primeros proyectos web.</p>
+                        
+                        <div class="course-projects" id="fcc-projects">
+                            <div class="project-item">
+                                <div class="project-title">Página Tributo</div>
+                                <div class="project-description">Mi primer proyecto HTML y CSS, una página tributo responsive.</div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-title">Formulario de Encuesta</div>
+                                <div class="project-description">Formulario interactivo con validación básica en JavaScript.</div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-title">Landing Page de Producto</div>
+                                <div class="project-description">Página completa con diseño moderno y responsive.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="expand-indicator">
+                            <span>Ver proyectos</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Python Inicial - 2024 -->
+                <div class="timeline-item">
+                    <div class="timeline-content" onclick="toggleProjects('python-projects')">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fab fa-python"></i>
+                            </div>
+                            <div class="course-info">
+                                <h4>Curso de Python Inicial</h4>
+                                <p class="course-period">Enero 2024 - Abril 2024</p>
+                            </div>
+                        </div>
+                        <p>Curso intensivo de 4 meses donde aprendí los fundamentos de Python, estructuras de datos, programación orientada a objetos y desarrollo de aplicaciones básicas.</p>
+                        
+                        <div class="course-projects" id="python-projects">
+                            <div class="project-item">
+                                <div class="project-title">Calculadora Interactiva</div>
+                                <div class="project-description">Aplicación de consola con operaciones matemáticas básicas.</div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-title">Sistema de Gestión de Tareas</div>
+                                <div class="project-description">CRUD completo para administrar tareas con persistencia en archivos.</div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-title">Juego de Adivinanza</div>
+                                <div class="project-description">Juego interactivo con lógica condicional y manejo de entrada/salida.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="expand-indicator">
+                            <span>Ver proyectos</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- TechLab - 2025 -->
+                <div class="timeline-item">
+                    <div class="timeline-content" onclick="toggleProjects('techlab-projects')">
+                        <div class="course-header">
+                            <div class="course-icon">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <div class="course-info">
+                                <h4>techLab - Bootcamp Full Stack</h4>
+                                <p class="course-period">Enero 2025 - Actualidad</p>
+                            </div>
+                        </div>
+                        <p>Bootcamp intensivo full stack donde estoy aprendendo desarrollo backend con Node.js, bases de datos, APIs REST, y frameworks modernos como React.</p>
+                        
+                        <div class="course-projects" id="techlab-projects">
+                            <div class="project-item">
+                                <div class="project-title">API REST con Express</div>
+                                <div class="project-description">Desarrollo de API completa con autenticación JWT y base de datos MongoDB.</div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-title">Aplicación React</div>
+                                <div class="project-description">Single Page Application con hooks, context API y consumo de APIs.</div>
+                            </div>
+                            <div class="project-item">
+                                <div class="project-title">Proyecto Full Stack</div>
+                                <div class="project-description">Aplicación completa con frontend React y backend Node.js integrados.</div>
+                            </div>
+                        </div>
+                        
+                        <div class="expand-indicator">
+                            <span>Ver proyectos</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Experiencia Laboral -->
+            <h3 class="mb-4 mt-5">Experiencia Laboral</h3>
             <div class="timeline">
                 {% for exp in data.experience %}
                 <div class="timeline-item mb-4">
-                    <div class="card shadow-sm">
+                    <div class="card shadow-sm modern-card">
                         <div class="card-body">
                             <h5 class="card-title">{{ exp.position }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">{{ exp.company }}</h6>
@@ -55,12 +175,12 @@
                 {% endfor %}
             </div>
 
-            <!-- Education -->
-            <h3 class="mb-4 mt-5">Educación!</h3>
+            <!-- Educación -->
+            <h3 class="mb-4 mt-5">Educación</h3>
             <div class="row">
                 {% for edu in data.education %}
                 <div class="col-md-6 mb-3">
-                    <div class="card shadow-sm h-100">
+                    <div class="card shadow-sm h-100 modern-card">
                         <div class="card-body">
                             <h5 class="card-title">{{ edu.degree }}</h5>
                             <h6 class="card-subtitle mb-2 text-muted">{{ edu.institution }}</h6>
@@ -73,4 +193,46 @@
         </div>
     </div>
 </div>
+
+<!-- Script para la interactividad de la línea de tiempo -->
+<script>
+function toggleProjects(projectId) {
+    const projects = document.getElementById(projectId);
+    const content = projects.parentElement;
+    
+    // Toggle la clase active
+    projects.classList.toggle('active');
+    content.classList.toggle('active');
+    
+    // Actualizar el texto del indicador
+    const indicator = content.querySelector('.expand-indicator span');
+    if (projects.classList.contains('active')) {
+        indicator.textContent = 'Ocultar proyectos';
+    } else {
+        indicator.textContent = 'Ver proyectos';
+    }
+}
+
+// Inicializar animaciones
+document.addEventListener('DOMContentLoaded', function() {
+    const timelineItems = document.querySelectorAll('.timeline-item');
+    
+    const observer = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.style.opacity = '1';
+                entry.target.style.transform = 'translateY(0)';
+            }
+        });
+    }, { threshold: 0.1 });
+    
+    timelineItems.forEach(item => {
+        item.style.opacity = '0';
+        item.style.transform = 'translateY(20px)';
+        item.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+        observer.observe(item);
+    });
+});
+</script>
 {% endblock %}
+[file content end]
