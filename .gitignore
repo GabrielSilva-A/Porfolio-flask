@@ -28,7 +28,7 @@ instance/
 .env
 .env.local
 .env.production
-Portfolio-flask.txt
+**Portfolio-flask.txt
 
 # Archivos de IDE
 .vscode/

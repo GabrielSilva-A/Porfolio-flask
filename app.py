@@ -13,10 +13,10 @@ app.config['FREEZER_DESTINATION'] = 'docs'
 portfolio_data = {
     'name': 'Gabriel Silva',
     'title': 'Desarrollador Full Stack (Junior)',
-    'email': 'ags0014@ejemplo.com',
-    'phone': '2475414146',
+    'email': 'ags0014@gmail.com',
+    'phone': '2475 - 414146',
     'location': 'Rojas, Argentina',
-    'about': 'Soy estudiante en Programacion, creo que mi mayor fortaleza es mi capacidad de aprendizaje y la adaptabilidad. Me tomo con entusiasmo cada nuevo desafio porque creo que es la oportunidad perfecta para aprender algo nuevo.',
+    'about': 'Soy estudiante en Programación, creo que mi mayor fortaleza es mi capacidad de aprendizaje y la adaptabilidad. Me tomo con entusiasmo cada nuevo desafio porque creo que es la oportunidad perfecta para aprender algo nuevo.',
     'skills': [
         {'name': 'Python', 'level': ' Intermedio', 'category': 'Backend', 'icon': 'fab fa-python'},
         {'name': 'Flask', 'level': ' Intermedio', 'category': 'Backend', 'icon': 'fas fa-flask'},
