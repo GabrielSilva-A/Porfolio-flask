@@ -537,16 +537,18 @@ body {
 .timeline-item:nth-child(5) { animation-delay: 0.5s; }
 
 /* ===== CORRECCIÓN FORMULARIO DE CONTACTO ===== */
-form label,
-form input,
-form textarea,
-form button,
-form small,
-form .form-control {
+.card form label,
+.card form input,
+.card form textarea,
+.card form button,
+.card form small,
+.card form .form-control {
     color: #000000 !important;
+    background-color: #ffffff !important;
+    border-color: #ced4da !important;
 }
 
-form input::placeholder,
-form textarea::placeholder {
+.card form input::placeholder,
+.card form textarea::placeholder {
     color: #444444 !important;
 }
