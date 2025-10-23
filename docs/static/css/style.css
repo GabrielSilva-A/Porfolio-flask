@@ -7,13 +7,14 @@
     --light-color: #f8fafc;
     --success-color: #10b981;
     --warning-color: #f59e0b;
-    --card-bg: #ffffff;
+    --card-bg: #1e293b;
     --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
 }
 
 @media (prefers-color-scheme: dark) {
     :root {
-        
+        --dark-color:#edebf3;
+        --light-color: #0f172a;
         --card-bg: #1e293b;
         --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
     }
@@ -462,6 +463,64 @@ body {
     top: 66%;
 }
 
+/* ===== ESTILOS ESPECÍFICOS PARA CONTACTO ===== */
+
+/* Fondo y texto del formulario de contacto */
+.contact-info.modern-card,
+.card.modern-card .card-body {
+    background: var(--card-bg) !important;
+    color: var(--dark-color) !important;
+}
+
+/* Estilos para inputs en ambos modos */
+.form-control {
+    background-color: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    color: var(--dark-color);
+}
+
+.form-control:focus {
+    background-color: rgba(255, 255, 255, 0.15);
+    border-color: var(--primary-color);
+    color: var(--dark-color);
+    box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
+}
+
+/* Labels del formulario */
+.form-label {
+    color: var(--dark-color);
+    font-weight: 600;
+}
+
+/* Texto de ayuda */
+.text-muted {
+    color: var(--secondary-color) !important;
+}
+
+/* Invalid feedback */
+.invalid-feedback {
+    color: #dc3545;
+    font-weight: 500;
+}
+
+/* Asegurar contraste en las tarjetas de información */
+.modern-card {
+    background: var(--card-bg);
+    color: var(--dark-color);
+}
+
+/* Estados hover para las tarjetas de contacto */
+.contact-info.modern-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+}
+
+/* Placeholder styling */
+.form-control::placeholder {
+    color: var(--secondary-color);
+    opacity: 0.7;
+}
+
 @media (max-width: 768px) {
     .profile-image {
         width: 200px;
@@ -534,20 +593,3 @@ body {
 .timeline-item:nth-child(3) { animation-delay: 0.3s; }
 .timeline-item:nth-child(4) { animation-delay: 0.4s; }
 .timeline-item:nth-child(5) { animation-delay: 0.5s; }
-
-/* ===== CORRECCIÓN FORMULARIO DE CONTACTO ===== */
-.card form label,
-.card form input,
-.card form textarea,
-.card form button,
-.card form small,
-.card form .form-control {
-    color: #000000 !important;
-    background-color: #ffffff !important;
-    border-color: #ced4da !important;
-}
-
-.card form input::placeholder,
-.card form textarea::placeholder {
-    color: #444444 !important;
-}
