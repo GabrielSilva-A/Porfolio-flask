@@ -1,29 +1,22 @@
 :root {
     --primary-color: #2563eb;
     --primary-dark: #1d4ed8;
-    --secondary-color: #64748b;
+    --secondary-color: #94a3b8;
     --accent-color: #06b6d4;
-    --dark-color: #000000;
-    --light-color: #f8fafc;
+    --dark-color: #edebf3;
+    --light-color: #0f172a;
     --success-color: #10b981;
     --warning-color: #f59e0b;
     --card-bg: #1e293b;
-    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --dark-color:#edebf3;
-        --light-color: #0f172a;
-        --card-bg: #1e293b;
-        --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
-    }
+    --card-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5);
+    --text-color: #ffffff;
+    --muted-text: #a0aec0;
 }
 
 body {
     font-family: 'Inter', 'Segoe UI', system-ui, sans-serif;
     line-height: 1.7;
-    color: var(--dark-color);
+    color: var(--text-color);
     background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
     min-height: 100vh;
 }
@@ -89,7 +82,7 @@ body {
     padding: 1.5rem;
     margin-bottom: 1rem;
     box-shadow: var(--card-shadow);
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -98,7 +91,7 @@ body {
 
 .skill-item:hover {
     transform: translateY(-5px);
-    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 20px 40px -10px rgba(0, 0, 0, 0.3);
 }
 
 .skill-icon {
@@ -115,12 +108,13 @@ body {
 .skill-name {
     font-weight: 600;
     margin-bottom: 0.25rem;
-    color: var(--dark-color);
+    color: var(--text-color);
 }
 
 .skill-level {
     font-size: 0.9rem;
     font-weight: 500;
+    color: var(--muted-text);
 }
 
 /* Badges de nivel */
@@ -152,15 +146,16 @@ body {
 .modern-card {
     background: var(--card-bg);
     border-radius: 20px;
-    border: none;
+    border: 1px solid rgba(255, 255, 255, 0.1);
     box-shadow: var(--card-shadow);
     transition: all 0.3s ease;
     overflow: hidden;
+    color: var(--text-color);
 }
 
 .modern-card:hover {
     transform: translateY(-10px);
-    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+    box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.4);
 }
 
 .card-gradient-header {
@@ -179,9 +174,9 @@ body {
 
 /* Navigation Moderna */
 .navbar {
-    background: rgba(255, 255, 255, 0.95) !important;
+    background: rgba(30, 41, 59, 0.95) !important;
     backdrop-filter: blur(10px);
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
 .navbar-brand {
@@ -196,6 +191,7 @@ body {
     font-weight: 500;
     position: relative;
     margin: 0 0.5rem;
+    color: var(--text-color) !important;
 }
 
 .nav-link::after {
@@ -213,6 +209,14 @@ body {
 .nav-link:hover::after,
 .nav-link.active::after {
     width: 100%;
+}
+
+.navbar-toggler {
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba%28255, 255, 255, 0.8%29' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
 }
 
 /* Botones Modernos */
@@ -261,8 +265,8 @@ body {
 
 /* Footer Moderno */
 .footer-modern {
-    background: var(--dark-color);
-    color: white;
+    background: var(--light-color);
+    color: var(--text-color);
     position: relative;
 }
 
@@ -277,7 +281,6 @@ body {
 }
 
 /* ===== ESTILOS PARA LA LÍNEA DE TIEMPO DE APRENDIZAJE ===== */
-
 .learning-timeline {
     position: relative;
     padding: 3rem 0;
@@ -323,12 +326,13 @@ body {
     position: relative;
     transition: all 0.3s ease;
     cursor: pointer;
-    border: 1px solid rgba(0, 0, 0, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
 }
 
 .timeline-content:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
 .timeline-content::before {
@@ -375,12 +379,12 @@ body {
 
 .course-info h4 {
     margin: 0;
-    color: var(--dark-color);
+    color: var(--text-color);
     font-weight: 600;
 }
 
 .course-period {
-    color: var(--secondary-color);
+    color: var(--muted-text);
     font-size: 0.9rem;
     margin: 0.25rem 0 0 0;
 }
@@ -399,7 +403,7 @@ body {
 }
 
 .project-item {
-    background: rgba(0, 0, 0, 0.03);
+    background: rgba(255, 255, 255, 0.05);
     border-radius: 10px;
     padding: 1rem;
     margin-bottom: 1rem;
@@ -413,12 +417,12 @@ body {
 .project-title {
     font-weight: 600;
     margin-bottom: 0.5rem;
-    color: var(--dark-color);
+    color: var(--text-color);
 }
 
 .project-description {
     font-size: 0.9rem;
-    color: var(--secondary-color);
+    color: var(--muted-text);
     margin: 0;
 }
 
@@ -448,89 +452,105 @@ body {
     border-radius: 50px;
     font-weight: 600;
     z-index: 3;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
 }
 
-.timeline-year-2023 {
-    top: 0;
+.timeline-year-2023 { top: 0; }
+.timeline-year-2024 { top: 33%; }
+.timeline-year-2025 { top: 66%; }
+
+/* ===== ESTILOS PARA PROYECTOS ===== */
+.card {
+    background: var(--card-bg);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    color: var(--text-color);
 }
 
-.timeline-year-2024 {
-    top: 33%;
+.card .text-muted {
+    color: var(--muted-text) !important;
 }
 
-.timeline-year-2025 {
-    top: 66%;
+.badge.bg-secondary {
+    background: var(--secondary-color) !important;
+    color: var(--light-color);
+}
+
+.badge.bg-light {
+    background: rgba(255, 255, 255, 0.1) !important;
+    color: var(--text-color) !important;
 }
 
 /* ===== ESTILOS ESPECÍFICOS PARA CONTACTO ===== */
-
-/* Fondo gris y texto BLANCO FIJO para el formulario de contacto */
 .contact-info.modern-card,
 .card.modern-card .card-body {
     background: var(--card-bg) !important;
-    color: #ffffff !important;
+    color: var(--text-color) !important;
 }
 
-/* Labels del formulario - BLANCO FIJO */
 .form-label {
-    color: #ffffff !important;
+    color: var(--text-color) !important;
     font-weight: 600;
 }
 
-/* Texto dentro de las tarjetas de información - BLANCO FIJO */
 .contact-info.modern-card p,
-.contact-info.modern-card h5 {
-    color: #ffffff !important;
-}
-
-/* Texto del título del formulario - BLANCO FIJO */
+.contact-info.modern-card h5,
 .card.modern-card .card-title {
-    color: #ffffff !important;
+    color: var(--text-color) !important;
 }
 
-/* Texto de ayuda - gris claro */
 .text-muted {
-    color: #a0aec0 !important;
+    color: var(--muted-text) !important;
 }
 
-/* Estilos para inputs */
 .form-control {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    color: #ffffff;
+    color: var(--text-color);
 }
 
 .form-control:focus {
     background-color: rgba(255, 255, 255, 0.15);
     border-color: var(--primary-color);
-    color: #ffffff;
+    color: var(--text-color);
     box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
 }
 
-/* Placeholder styling */
 .form-control::placeholder {
-    color: #a0aec0;
+    color: var(--muted-text);
     opacity: 0.7;
 }
 
-/* Asegurar que el texto en las modern-card de contacto sea blanco */
-.contact-section .modern-card {
-    color: #ffffff !important;
-}
-
-/* Invalid feedback */
 .invalid-feedback {
     color: #f8d7da !important;
     font-weight: 500;
 }
 
-/* Estados hover para las tarjetas de contacto */
 .contact-info.modern-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
 }
 
+/* Alertas */
+.alert {
+    border: none;
+    color: var(--text-color);
+}
+
+.alert-success {
+    background: rgba(16, 185, 129, 0.2);
+    border-left: 4px solid var(--success-color);
+}
+
+.alert-danger {
+    background: rgba(220, 53, 69, 0.2);
+    border-left: 4px solid #dc3545;
+}
+
+.btn-close {
+    filter: invert(1);
+}
+
+/* Responsive */
 @media (max-width: 768px) {
     .profile-image {
         width: 200px;
