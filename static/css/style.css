@@ -465,60 +465,70 @@ body {
 
 /* ===== ESTILOS ESPECÍFICOS PARA CONTACTO ===== */
 
-/* Fondo y texto del formulario de contacto */
+/* Fondo gris y texto BLANCO FIJO para el formulario de contacto */
 .contact-info.modern-card,
 .card.modern-card .card-body {
     background: var(--card-bg) !important;
-    color: var(--dark-color) !important;
+    color: #ffffff !important;
 }
 
-/* Estilos para inputs en ambos modos */
+/* Labels del formulario - BLANCO FIJO */
+.form-label {
+    color: #ffffff !important;
+    font-weight: 600;
+}
+
+/* Texto dentro de las tarjetas de información - BLANCO FIJO */
+.contact-info.modern-card p,
+.contact-info.modern-card h5 {
+    color: #ffffff !important;
+}
+
+/* Texto del título del formulario - BLANCO FIJO */
+.card.modern-card .card-title {
+    color: #ffffff !important;
+}
+
+/* Texto de ayuda - gris claro */
+.text-muted {
+    color: #a0aec0 !important;
+}
+
+/* Estilos para inputs */
 .form-control {
     background-color: rgba(255, 255, 255, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.2);
-    color: var(--dark-color);
+    color: #ffffff;
 }
 
 .form-control:focus {
     background-color: rgba(255, 255, 255, 0.15);
     border-color: var(--primary-color);
-    color: var(--dark-color);
+    color: #ffffff;
     box-shadow: 0 0 0 0.2rem rgba(37, 99, 235, 0.25);
 }
 
-/* Labels del formulario */
-.form-label {
-    color: var(--dark-color);
-    font-weight: 600;
+/* Placeholder styling */
+.form-control::placeholder {
+    color: #a0aec0;
+    opacity: 0.7;
 }
 
-/* Texto de ayuda */
-.text-muted {
-    color: var(--secondary-color) !important;
+/* Asegurar que el texto en las modern-card de contacto sea blanco */
+.contact-section .modern-card {
+    color: #ffffff !important;
 }
 
 /* Invalid feedback */
 .invalid-feedback {
-    color: #dc3545;
+    color: #f8d7da !important;
     font-weight: 500;
-}
-
-/* Asegurar contraste en las tarjetas de información */
-.modern-card {
-    background: var(--card-bg);
-    color: var(--dark-color);
 }
 
 /* Estados hover para las tarjetas de contacto */
 .contact-info.modern-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
-}
-
-/* Placeholder styling */
-.form-control::placeholder {
-    color: var(--secondary-color);
-    opacity: 0.7;
 }
 
 @media (max-width: 768px) {
