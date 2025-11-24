@@ -55,8 +55,18 @@
                                     <div class="d-flex justify-content-between align-items-center">
                                         <div class="skill-name fw-bold">{{ skill.name }}</div>
                                         <div class="skill-level">
-                                            <span class="badge level-{{ skill.level|lower }}">
-                                                {{ skill.level }}
+                                            {# Normalizamos y mapeamos el nivel a una de las tres categorías estándar #}
+                                            {% set raw = skill.level %}
+                                            {% set norm = raw|lower|replace('á','a')|replace('é','e')|replace('í','i')|replace('ó','o')|replace('ú','u')|replace('ü','u')|replace(' ','') %}
+                                            {% if 'avanz' in norm or 'advanced' in norm %}
+                                                {% set canonical = 'avanzado' %}
+                                            {% elif 'inter' in norm or 'intermediate' in norm %}
+                                                {% set canonical = 'intermedio' %}
+                                            {% else %}
+                                                {% set canonical = 'basico' %}
+                                            {% endif %}
+                                            <span class="badge level-badge level-{{ canonical }}">
+                                                {{ canonical|capitalize }}
                                             </span>
                                         </div>
                                     </div>

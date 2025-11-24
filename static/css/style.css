@@ -111,6 +111,11 @@ body {
     color: var(--text-color);
 }
 
+/* Añadimos separación entre el nombre de la skill y el badge */
+.skill-info .skill-name {
+    margin-right: 0.75rem;
+}
+
 .skill-level {
     font-size: 0.9rem;
     font-weight: 500;
@@ -119,28 +124,49 @@ body {
 
 /* Badges de nivel */
 .level-badge {
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
+    padding: 0.15rem 0.5rem;
+    border-radius: 12px;
+    font-size: 0.75rem;
     font-weight: 600;
-    text-transform: uppercase;
+    text-transform: none;
     letter-spacing: 0.5px;
+    display: inline-block;
+    border: 1px solid rgba(0,0,0,0.05);
+    box-shadow: 0 2px 6px rgba(0,0,0,0.25);
 }
 
-.level-avanzado {
-    background: linear-gradient(135deg, var(--success-color), #059669);
-    color: white;
+.level-badge::first-letter { text-transform: uppercase; }
+
+/* Map levels: básico = verde, intermedio = amarillo, avanzado = azul */
+.level-basico,
+.level-basic {
+    /* Básico: color plano verde */
+    background: var(--success-color) !important;
+    color: white !important;
+    border-color: rgba(0,0,0,0.15) !important;
 }
 
-.level-intermedio {
-    background: linear-gradient(135deg, var(--warning-color), #d97706);
-    color: white;
+.level-intermedio,
+.level-intermediate {
+    /* Intermedio: color plano naranja para mejor legibilidad */
+    background: var(--warning-color) !important;
+    color: var(--light-color) !important;
+    border-color: rgba(0,0,0,0.06) !important;
 }
 
-.level-basico {
-    background: linear-gradient(135deg, var(--secondary-color), #475569);
-    color: white;
+.level-avanzado,
+.level-advanced {
+    /* Avanzado: color plano azul */
+    background: var(--primary-color) !important;
+    color: white !important;
+    border-color: rgba(0,0,0,0.12) !important;
 }
+
+/* Fallback selectors with higher specificity in case bootstrap overrides simple classes */
+.skill-level .badge.level-badge { display: inline-block; }
+.skill-level .badge.level-badge.level-basico { background: var(--success-color) !important; color: white !important; }
+.skill-level .badge.level-badge.level-intermedio { background: var(--warning-color) !important; color: var(--light-color) !important; }
+.skill-level .badge.level-badge.level-avanzado { background: var(--primary-color) !important; color: white !important; }
 
 /* Cards Modernas */
 .modern-card {
@@ -565,6 +591,7 @@ body {
         font-size: 1.5rem;
         width: 40px;
     }
+    .skill-info .skill-name { margin-right: 0.5rem; }
 
     .learning-timeline::before {
         left: 30px;
