@@ -2,7 +2,10 @@
 
 {% block content %}
 <div class="container py-5 mt-4">
-    <h1 class="text-center mb-5">Mis Proyectos</h1>
+    <div class="d-flex justify-content-between align-items-center mb-4">
+        <h1 class="mb-0">Mis Proyectos</h1>
+
+    </div>
     
     <div class="row">
         {% for project in data.projects %}
@@ -25,20 +28,12 @@
                     
                     <div class="project-links mt-auto">
                         <div class="d-grid gap-2 d-md-flex">
-                            {% if project.github_url %}
-                            <a href="{{ project.github_url }}" class="btn btn-dark btn-lg me-2" target="_blank" rel="noopener">
+                            <a href="https://github.com/GabrielSilva-A/Porfolio-flask" class="btn btn-dark btn-lg me-2" target="_blank" rel="noopener">
                                 <i class="fab fa-github me-2"></i>Ver Código
                             </a>
-                            {% endif %}
-                            {% if project.demo_url and project.demo_url != '#' %}
-                            <a href="{{ project.demo_url }}" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
-                                <i class="fas fa-external-link-alt me-2"></i>Ver Demo
+                            <a href="https://gabrielsilva-a.github.io/Porfolio-flask/" class="btn btn-primary btn-lg" target="_blank" rel="noopener">
+                                <i class="fas fa-external-link-alt me-2"></i>Visitar Sitio
                             </a>
-                            {% else %}
-                            <button class="btn btn-outline-primary btn-lg" disabled>
-                                <i class="fas fa-external-link-alt me-2"></i>Próximamente
-                            </button>
-                            {% endif %}
                         </div>
                     </div>
                 </div>
